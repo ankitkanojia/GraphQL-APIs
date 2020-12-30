@@ -21,11 +21,10 @@ function App() {
       <h1>Country List</h1>
       <div className="container">
         {data && data.countries &&
-          data.countries.map((pokemon, index) => (
+          data.countries.map((element, index) => (
             <div key={index} className="card">
-              <img src={pokemon.image} />
               <div className="card-body">
-                <h3>{pokemon.name}</h3>
+                <h3>{element.name}</h3>
               </div>
             </div>
           ))}
