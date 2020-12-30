@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { useQuery } from '@apollo/react-hooks';
 import gql from "graphql-tag";
-
 
 const GET_POKEMON_INFO = gql`
 {
@@ -10,8 +8,8 @@ const GET_POKEMON_INFO = gql`
       code,
       name
     }
-  }
-`
+}`
+
 function App() {
   const { data, loading, error } = useQuery(GET_POKEMON_INFO);
 
