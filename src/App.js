@@ -4,7 +4,10 @@ import gql from "graphql-tag";
 
 const GET_POKEMON_INFO = gql`
 {
-    test
+    countries{
+      code,
+      name
+    }
 }`
 
 function App() {
@@ -17,7 +20,14 @@ function App() {
     <React.Fragment>
       <h1>Country List</h1>
       <div className="container">
-        <h2>{data && data.test}</h2>
+        {data && data.countries &&
+          data.countries.map((element, index) => (
+            <div key={index} className="card">
+              <div className="card-body">
+                <h3>{element.name}</h3>
+              </div>
+            </div>
+          ))}
       </div>
     </React.Fragment>
   );

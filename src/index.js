@@ -11,7 +11,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 const cache = new InMemoryCache();
 
 const link = new HttpLink({
-  uri: 'http://localhost:9000'
+  uri: 'https://countries.trevorblades.com/'
 })
 
 const client = new ApolloClient({
