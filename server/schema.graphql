@@ -1,3 +1,8 @@
 type Query  {
-   test: String
+   test: [Student]
+}
+
+type Student {
+   firstName:String
+   lastName:String
 }
