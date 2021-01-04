@@ -1,8 +1,14 @@
 type Query  {
-   test: [Student]
+   greeting:String
+   students: [Student],
+   studentById(id:ID!):Student ,
+   limitedStudents(first:Int):[Student],
+   sortedStudents:[Student]
 }
 
 type Student {
+   id: ID!
    firstName:String
    lastName:String
+   fullName:String 
 }

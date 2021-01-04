@@ -8,6 +8,14 @@
       "collegeId": "col-102"
    },   
    {
+      "id": "S1003",
+      "email": "opal.sudhakaran@tutorialpoint.org",
+      "firstName":"Opal",
+      "lastName":"karishma",
+      "password": "pass123",
+      "collegeId": "col-101"
+   },   
+   {
       "id": "S1002",
       "email": "kannan.sudhakaran@tutorialpoint.org",
       "firstName":"Kannan",
