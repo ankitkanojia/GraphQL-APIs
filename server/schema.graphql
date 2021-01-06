@@ -6,6 +6,10 @@ type Query  {
    sortedStudents:[Student]
 }
 
+type Mutation {
+   createStudent(firstName: String , lastName:String): Student!
+}
+
 type Student {
    id: ID!
    firstName:String

@@ -18,10 +18,24 @@ const Query = {
    }
 }
 
+const Mutation = {
+   createStudent: (root, args, context, info) => {
+      let studentObj = store.collection('students');
+      let idCount = studentObj.list().length;
+      const newStudent = {
+         id: `${idCount++}`,
+         firstName: args.firstName,
+         lastName: args.lastName
+      }
+      studentObj.create(newStudent);
+      return newStudent
+   }
+}
+
 const Student = {
    fullName:(root,args,context,info) => {
       return root.firstName + ":" + root.lastName
    }
 }
 
-module.exports = { Query, Student }   
+module.exports = { Query, Mutation, Student }   
