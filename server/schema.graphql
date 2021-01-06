@@ -7,7 +7,8 @@ type Query  {
 }
 
 type Mutation {
-   createStudent(firstName: String , lastName:String): Student!
+   createStudent(firstName: String , lastName:String): Student!,
+   deleteStudent(id: ID!) : [Student]
 }
 
 type Student {
