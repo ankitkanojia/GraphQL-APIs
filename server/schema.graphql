@@ -8,7 +8,8 @@ type Query  {
 
 type Mutation {
    createStudent(firstName: String , lastName:String): Student!,
-   deleteStudent(id: ID!) : [Student]
+   deleteStudent(id: ID!) : [Student],
+   updateStudent(id: ID!, firstName: String! , lastName:String!):  [Student]
 }
 
 type Student {
