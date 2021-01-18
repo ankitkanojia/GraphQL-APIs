@@ -30,6 +30,11 @@ const Mutation = {
       studentObj.create(newStudent);
       return newStudent
    },
+   updateStudent: (root, args, context, info) => {
+      let studentList =  store.collection('students');
+      studentList.update({ id: args.id, firstName : args.firstName, lastName : args.lastName});
+      return studentList.list()
+   },
    deleteStudent: (root, args, context, info) => {
       let studentList =  store.collection('students');
       studentList.delete(args.id);
