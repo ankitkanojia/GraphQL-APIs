@@ -24,6 +24,7 @@ const Query = {
 }
 
 const Mutation = {
+   // Create new student in student list
    createStudent: (root, args, context, info) => {
       let studentObj = store.collection('students');
       let idCount = studentObj.list().length;
@@ -35,19 +36,16 @@ const Mutation = {
       studentObj.create(newStudent);
       return newStudent
    },
+   // Update student detail based on id
    updateStudent: (root, args, context, info) => {
       let studentList =  store.collection('students');
       studentList.update({ id: args.id, firstName : args.firstName, lastName : args.lastName});
       return studentList.list()
    },
+   // Delete specific student from list
    deleteStudent: (root, args, context, info) => {
       let studentList =  store.collection('students');
       studentList.delete(args.id);
-      return studentList.list()
-   },
-   updateStudent: (root, args, context, info) => {
-      let studentList =  store.collection('students');
-      studentList.update({ id: args.id, firstName : args.firstName, lastName : args.lastName});
       return studentList.list()
    }
 }
