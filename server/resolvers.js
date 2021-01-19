@@ -3,16 +3,21 @@ const { DataStore } = require('notarealdb');
 const store = new DataStore('./data');
 
 const Query = {
+   // Sample API call
    greeting: () => {
       return "hello from  TutorialsPoint !!!"
    },
+   // Fetch list of students
    students: () => store.collection('students').list(),
+   // Fetch student detail
    studentById: (root, args, context, info) => {
       return store.collection('students').get(args.id);
    },
+   // Fetch specific count based list
    limitedStudents: (root, args, context, info) => {
       return store.collection('students').list().slice(0, args.first)
    },
+   // Apply sorting on student list
    sortedStudents: (root, args, context, info) => {
       return store.collection('students').list();
    }
